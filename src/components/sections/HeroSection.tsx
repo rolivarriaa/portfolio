@@ -7,6 +7,7 @@ import { urlFor } from "@/sanity/image";
 import {
   FaCheck,
   FaEnvelope,
+  FaFilePdf,
   FaGithubAlt,
   FaGlobeAmericas,
   FaLaptopCode,
@@ -73,6 +74,18 @@ export async function HeroSection() {
 
               {profile.socialLinks && (
                 <div className="flex flex-wrap gap-3 @md/hero:gap-4 pt-4">
+                  {profile.socialLinks.website && (
+                    <Link
+                      href={profile.socialLinks.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-2 items-center px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
+                    >
+                      <FaFilePdf />
+                      Resume
+                    </Link>
+                  )}
+
                   {profile.socialLinks.linkedin && (
                     <Link
                       href={profile.socialLinks.linkedin}
@@ -96,17 +109,15 @@ export async function HeroSection() {
                     </Link>
                   )}
 
-                  {profile.socialLinks.website && (
-                    <Link
-                      href={profile.socialLinks.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex gap-2 items-center px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
-                    >
-                      <FaGlobeAmericas />
-                      Website
-                    </Link>
-                  )}
+                  <Link
+                    href="x"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-2 items-center px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
+                  >
+                    <FaGlobeAmericas />
+                    Website
+                  </Link>
                 </div>
               )}
 
