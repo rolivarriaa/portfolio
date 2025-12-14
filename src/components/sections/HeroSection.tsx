@@ -1,6 +1,5 @@
 import { type SanityDocument } from "@sanity/client";
 import { client } from "@/sanity/client";
-import { Button } from "../ui/button";
 import ProfileImage from "./ProfileImage";
 import Link from "next/link";
 import { LayoutTextFlip } from "../ui/layout-text-flip";
@@ -10,6 +9,7 @@ import {
   FaEnvelope,
   FaGithubAlt,
   FaGlobeAmericas,
+  FaLaptopCode,
   FaLinkedin,
   FaMapMarkerAlt,
 } from "react-icons/fa";
@@ -46,7 +46,7 @@ export async function HeroSection() {
 
       <div className="relative z-10 container mx-auto max-w-6xl">
         <div className="@container">
-          <div className="grid grid-cols-2 @3xl:grid-cols-2 gap-8 @lg:gap-12 items-center ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center ">
             {/* Text Content */}
             <div className="@container/hero space-y-4 @md/hero:space-y-6">
               <h1 className="text-4xl @md/hero:text-5xl @lg/hero:text-7xl font-bold tracking-tight">
@@ -130,7 +130,7 @@ export async function HeroSection() {
                 {profile.availability && (
                   <div className="flex items-center gap-2">
                     <span>
-                      <FaCheck />
+                      <FaLaptopCode />
                     </span>
                     <span>{profile.availability}</span>
                   </div>
