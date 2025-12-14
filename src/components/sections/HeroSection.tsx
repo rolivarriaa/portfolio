@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import ProfileImage from "./ProfileImage";
 import Link from "next/link";
 import { LayoutTextFlip } from "../ui/layout-text-flip";
+import { urlFor } from "@/sanity/image";
 
 const HERO_QUERY = `*[_type == "profile"]{
     firstName,
@@ -28,34 +29,6 @@ export async function HeroSection() {
     .then((res) => res[0]);
 
   return (
-    // <section className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
-    //   {profile && (
-    //     <div className="flex flex-col  md:flex-row items-center md:items-start md:justify-between gap-10 md:gap-20">
-    //       <div>
-    //         <h1 className="text-4xl font-bold">
-    //           {profile.firstName} {profile.lastName}
-    //         </h1>
-    //         <p className="text-xl mt-4">{profile.headline}</p>
-    //         <p className="mt-6">{profile.shortBio}</p>
-    //         {/* <p>{profile.profileImage.alt}</p> */}
-    //         {/* <p>{profile.profileImage.asset._ref}</p> */}
-    //         {/* <p> change theme </p> */}
-
-    //         <Button className="mt-4" size="lg">
-    //           Contact Me
-    //         </Button>
-    //       </div>
-    //       <div>
-    //         <ProfileImage
-    //           imageUrl=""
-    //           firstName={profile.firstName}
-    //           lastName={profile.lastName}
-    //         />
-    //       </div>
-    //     </div>
-    //   )}
-    // </section>
-
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden"
@@ -149,7 +122,7 @@ export async function HeroSection() {
             </div>
 
             {/* Profile Image */}
-            {/* {profile.profileImage && (
+            {profile.profileImage && (
               <ProfileImage
                 // imageUrl=""
                 imageUrl={urlFor(profile.profileImage)
@@ -159,7 +132,7 @@ export async function HeroSection() {
                 firstName={profile.firstName || ""}
                 lastName={profile.lastName || ""}
               />
-            )} */}
+            )}
           </div>
         </div>
       </div>
