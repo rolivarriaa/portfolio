@@ -5,6 +5,14 @@ import ProfileImage from "./ProfileImage";
 import Link from "next/link";
 import { LayoutTextFlip } from "../ui/layout-text-flip";
 import { urlFor } from "@/sanity/image";
+import {
+  FaCheck,
+  FaEnvelope,
+  FaGithubAlt,
+  FaGlobeAmericas,
+  FaLinkedin,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const HERO_QUERY = `*[_type == "profile"]{
     firstName,
@@ -31,14 +39,14 @@ export async function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center  py-10 overflow-hidden"
     >
       {/* Background Ripple Effect */}
       {/* <BackgroundRippleEffect rows={8} cols={27} cellSize={56} /> */}
 
       <div className="relative z-10 container mx-auto max-w-6xl">
         <div className="@container">
-          <div className="grid grid-cols-1 @3xl:grid-cols-2 gap-8 @lg:gap-12 items-center">
+          <div className="grid grid-cols-2 @3xl:grid-cols-2 gap-8 @lg:gap-12 items-center ">
             {/* Text Content */}
             <div className="@container/hero space-y-4 @md/hero:space-y-6">
               <h1 className="text-4xl @md/hero:text-5xl @lg/hero:text-7xl font-bold tracking-tight">
@@ -52,7 +60,7 @@ export async function HeroSection() {
                   text={profile.headlineStaticText}
                   words={profile.headlineAnimatedWords}
                   duration={profile.headlineAnimationDuration || 3000}
-                  className="text-xl @md/hero:text-2xl @lg/hero:text-3xl text-muted-foreground font-medium"
+                  className="text-lg @md/hero:text-2xl @lg/hero:text-3xl text-muted-foreground font-medium"
                 />
               ) : (
                 <p className="text-xl @md/hero:text-2xl @lg/hero:text-3xl text-muted-foreground font-medium">
@@ -65,24 +73,26 @@ export async function HeroSection() {
 
               {profile.socialLinks && (
                 <div className="flex flex-wrap gap-3 @md/hero:gap-4 pt-4">
-                  {profile.socialLinks.github && (
-                    <Link
-                      href={profile.socialLinks.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
-                    >
-                      GitHub
-                    </Link>
-                  )}
                   {profile.socialLinks.linkedin && (
                     <Link
                       href={profile.socialLinks.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
+                      className="flex gap-2 items-center px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
                     >
+                      <FaLinkedin className="text-[#0A66C2]" />
                       LinkedIn
+                    </Link>
+                  )}
+                  {profile.socialLinks.github && (
+                    <Link
+                      href={profile.socialLinks.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-2 items-center px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
+                    >
+                      <FaGithubAlt className="text-[#181717]" />
+                      GitHub
                     </Link>
                   )}
 
@@ -91,30 +101,37 @@ export async function HeroSection() {
                       href={profile.socialLinks.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
+                      className="flex gap-2 items-center px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
                     >
+                      <FaGlobeAmericas />
                       Website
                     </Link>
                   )}
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-4 @md/hero:gap-6 pt-4 text-xs @md/hero:text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-4 text-[14px] @md/hero:gap-6 pt-4 text-xs @md/hero:text-sm text-muted-foreground">
                 {profile.email && (
                   <div className="flex items-center gap-2">
-                    <span>📧</span>
+                    <span>
+                      <FaEnvelope />
+                    </span>
                     <span className="truncate">{profile.email}</span>
                   </div>
                 )}
                 {profile.location && (
                   <div className="flex items-center gap-2">
-                    <span>📍</span>
+                    <span>
+                      <FaMapMarkerAlt />
+                    </span>
                     <span>{profile.location}</span>
                   </div>
                 )}
                 {profile.availability && (
                   <div className="flex items-center gap-2">
-                    <span>✅</span>
+                    <span>
+                      <FaCheck />
+                    </span>
                     <span>{profile.availability}</span>
                   </div>
                 )}
