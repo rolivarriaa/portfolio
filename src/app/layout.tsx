@@ -40,7 +40,8 @@ export default function RootLayout({
           >
             <SidebarProvider>
               <SidebarInset>{children}</SidebarInset>
-              <AppSidebar side="right" />
+              {/* hide de sidebar until all the sections are done. */}
+              {/* <AppSidebar side="right" /> */}
             </SidebarProvider>
           </ThemeProvider>
         </body>

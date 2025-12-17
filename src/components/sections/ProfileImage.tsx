@@ -20,7 +20,7 @@ function ProfileImage({ imageUrl, firstName, lastName }: ProfileImageProps) {
   return (
     <button
       type="button"
-      onClick={() => (isSignedIn ? toggleSidebar() : openSignIn())}
+      // onClick={() => (isSignedIn ? toggleSidebar() : openSignIn())}
       className="relative aspect-square rounded-2xl overflow-hidden border-4 border-primary/20 block group cursor-pointer w-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -35,7 +35,7 @@ function ProfileImage({ imageUrl, firstName, lastName }: ProfileImageProps) {
       />
 
       {/* Online Badge */}
-      <div className="absolute top-4 right-4 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
+      <div className="absolute top-4 right-4 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full hidden">
         <div className="relative">
           <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
           <div className="absolute inset-0 w-2.5 h-2.5 bg-green-500 rounded-full animate-ping" />
@@ -44,7 +44,7 @@ function ProfileImage({ imageUrl, firstName, lastName }: ProfileImageProps) {
       </div>
       {/* Hover Overlay */}
       <div
-        className={`absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ${
+        className={`hidden absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center transition-opacity duration-300 ${
           isHovered ? "opacity-100" : "opacity-0"
         }`}
       >
