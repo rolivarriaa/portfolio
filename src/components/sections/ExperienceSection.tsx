@@ -87,13 +87,13 @@ async function ExperienceSection() {
                         {exp.employmentType && (
                           <>
                             <span className="text-muted-foreground">•</span>
-                            <span className="text-xs @md/card:text-sm text-muted-foreground">
+                            <span className="text-sm @md/card:text-sm text-muted-foreground">
                               {exp.employmentType}
                             </span>
                           </>
                         )}
                       </div>
-                      <div className="flex flex-wrap items-center gap-2 mt-2 text-xs @md/card:text-sm text-muted-foreground">
+                      <div className="flex flex-wrap items-center gap-2 mt-2 text-sm @md/card:text-sm text-muted-foreground">
                         <span>
                           {exp.startDate && formatDate(exp.startDate)} -{" "}
                           {exp.current
@@ -123,7 +123,7 @@ async function ExperienceSection() {
                       <h4 className="font-semibold mb-2 text-sm @md/card:text-base">
                         Key Responsibilities:
                       </h4>
-                      <ul className="list-disc list-inside space-y-1 text-muted-foreground text-xs @md/card:text-sm">
+                      <ul className="list-disc list-inside space-y-1 text-muted-foreground text-sm @md/card:text-sm">
                         {exp.responsibilities.map((resp: any, idx: any) => (
                           <li key={`${exp.company}-resp-${idx}`}>{resp}</li>
                         ))}
@@ -136,7 +136,7 @@ async function ExperienceSection() {
                       <h4 className="font-semibold mb-2 text-sm @md/card:text-base">
                         Achievements:
                       </h4>
-                      <ul className="list-disc list-inside space-y-1 text-muted-foreground text-xs @md/card:text-sm">
+                      <ul className="list-disc list-inside space-y-1 text-muted-foreground text-sm @md/card:text-sm">
                         {exp.achievements.map((achievement: any, idx: any) => (
                           <li key={`${exp.company}-achievement-${idx}`}>
                             {achievement}
@@ -156,7 +156,7 @@ async function ExperienceSection() {
                         return techData?.name ? (
                           <span
                             key={`${exp.company}-tech-${techIdx}`}
-                            className="px-2 py-0.5 @md/card:px-3 @md/card:py-1 text-xs rounded-full bg-primary/10 text-primary"
+                            className="px-2 py-0.5 @md/card:px-3 @md/card:py-1 text-sm rounded-full bg-primary/10 text-primary"
                           >
                             {techData.name}
                           </span>

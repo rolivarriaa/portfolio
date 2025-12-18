@@ -109,7 +109,7 @@ export async function HeroSection() {
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-4 text-[14px] @md/hero:gap-6 pt-4 text-xs @md/hero:text-sm text-muted-foreground">
+              <div className="flex flex-wrap gap-4 text-[14px] @md/hero:gap-6 pt-4 text-sm @md/hero:text-sm text-muted-foreground">
                 {profile.email && (
                   <div className="flex items-center gap-2">
                     <span>
