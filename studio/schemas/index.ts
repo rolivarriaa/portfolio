@@ -3,6 +3,6 @@ import skill from './skill'
 import profile from './profile'
 import contact from './contact'
 import blog from './blog'
-import users from './users'
+import achievements from './achievements'
 
-export const schemaTypes = [profile, project, skill, contact, blog, users]
+export const schemaTypes = [profile, project, skill, contact, blog, achievements]

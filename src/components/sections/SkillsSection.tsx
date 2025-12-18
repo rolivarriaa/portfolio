@@ -1,9 +1,51 @@
-import React from 'react'
+import { client } from "@/sanity/client";
+import { type SanityDocument } from "@sanity/client";
+import SkillsChart from "./SkillsChart";
 
-function SkillsSection() {
-  return (
-    <div>SkillsSection</div>
-  )
+interface Skill {
+  name: string;
+  category: string;
+  proficiency: string;
+  percentage: number;
+  yearsOfExperience: number;
+  color: string;
 }
 
-export default SkillsSection
+const SKILLS_QUERY = `*[_type == "skill"] | order(category asc, order asc) {
+ name,
+  category,
+  proficiency,
+  percentage,
+  yearsOfExperience,
+  color
+ }`;
+
+async function SkillsSection() {
+  const skills = await client
+    .fetch<Skill[]>(SKILLS_QUERY, {}, { next: { revalidate: 30 } })
+    .then((res) => res);
+
+  if (!skills || skills.length === 0) {
+    return null;
+  }
+
+  return (
+    <section id="skills" className="py-20 px-6 bg-muted/30">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Skills & Expertise
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            A comprehensive overview of my technical proficiencies and tools I
+            work with daily
+          </p>
+        </div>
+
+        <SkillsChart skills={skills} />
+      </div>
+    </section>
+  );
+}
+
+export default SkillsSection;
