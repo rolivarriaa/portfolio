@@ -28,6 +28,8 @@ export default defineType({
           {title: 'Design', value: 'design'},
           {title: 'Tools', value: 'tools'},
           {title: 'Soft Skills', value: 'soft-skills'},
+          {title: 'CMS', value: 'cms'},
+          {title: 'All-in-one Marketing Platform', value: 'marketing-platform'},
           {title: 'Other', value: 'other'},
         ],
       },
