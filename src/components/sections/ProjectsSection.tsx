@@ -35,7 +35,9 @@ async function ProjectsSection() {
         </div>
 
         <div className="@container">
-          <div className="grid grid-cols-1 @2xl:grid-cols-2 @5xl:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 @2xl:grid-cols-2 @5xl:grid-cols-3 gap-8"> */}
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {projects.map((project: any) => (
               <div
                 key={project.slug?.current}
