@@ -9,7 +9,7 @@ import CertificationsSection from "./sections/CertificationsSection";
 import AchievementsSection from "./sections/AchievementsSection";
 import ServicesSection from "./sections/ServicesSection";
 import BlogSection from "./sections/BlogSection";
-import ContactSection from "./sections/ContactSection";
+import { ContactSection } from "./sections/ContactSection";
 
 async function PortfolioContent() {
   return (
@@ -27,7 +27,8 @@ async function PortfolioContent() {
       {/* <AchievementsSection /> */}
       {/*<ServicesSection />
       <BlogSection />
-      <ContactSection />  */}
+      */}
+      <ContactSection />
     </>
   );
 }
