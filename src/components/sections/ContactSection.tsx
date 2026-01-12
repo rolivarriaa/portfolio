@@ -33,7 +33,7 @@ export async function ContactSection() {
         </div>
 
         <div className="@container">
-          <div className="grid grid-cols-2 @3xl:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 @xl:grid-cols-2 @3xl:grid-cols-2 gap-8">
             {/* Contact Info */}
             <div className="@container/info space-y-6">
               <h3 className="text-xl @md/info:text-2xl font-semibold mb-6">
